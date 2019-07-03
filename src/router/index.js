@@ -301,6 +301,27 @@ export const constantRouterMap = [
       }
     ]
   },
+  {
+    path:'/usr',
+    component: Layout,
+    redirect: '/usr/usrlist',
+    name: 'usr',
+    meta: {title: '用户', icon: 'sms'},
+    children: [
+      {
+        path: 'usrlist',
+        name: 'usrlist',
+        component: () => import('@/views/usr/index'),
+        meta: {title: '用户列表', icon: 'sms-flash'}
+      },
+      {
+        path: 'authlist',
+        name: 'authlist',
+        component: () => import('@/views/usr/index'),
+        meta: {title: '用户权限', icon: 'sms-flash'}
+      }
+    ]
+  },
   {path: '*', redirect: '/404', hidden: true}
 ]
 
